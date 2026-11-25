@@ -1,0 +1,12 @@
+{
+  "bundle": {
+    "active": true,
+    "useLocalToolsDir": true,
+    "targets": ["nsis"],
+    "resources": ["runtime/worker/", "runtime/licenses/"],
+    "windows": {
+      "webviewInstallMode": { "type": "offlineInstaller" },
+      "nsis": { "installMode": "currentUser", "compression": "zlib" }
+    }
+  }
+}

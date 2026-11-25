@@ -1,0 +1,14 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "workspace",
+  "description": "Manage the local wardrobe and worker from the main workspace.",
+  "windows": ["main"],
+  "permissions": [
+    "allow-system-status", "allow-retry-worker", "allow-worker-diagnostics",
+    "allow-wardrobe-categories", "allow-wardrobe-state", "allow-wardrobe-setup",
+    "allow-wardrobe-unlock", "allow-wardrobe-change-passphrase", "allow-wardrobe-list",
+    "allow-wardrobe-detail", "allow-wardrobe-save", "allow-wardrobe-delete", "allow-wardrobe-image",
+    "allow-wardrobe-backups", "allow-wardrobe-create-backup", "allow-wardrobe-restore",
+    "allow-wardrobe-cancel-backup"
+  ]
+}

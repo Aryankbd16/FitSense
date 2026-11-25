@@ -1,0 +1,150 @@
+.wardrobe-heading, .ward-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.wardrobe-heading { justify-content: space-between; gap: 14px; }
+.ward-stack { display: grid; gap: 14px; }
+.ward-panel {
+  min-width: 0;
+  padding: clamp(15px, 2.2vw, 25px);
+  border: 1px solid var(--rule);
+  border-radius: 15px;
+  background: #fff;
+}
+
+.ward-panel h2, .ward-empty h2, .ward-panel h3 {
+  margin: 0;
+  font: 800 1.38rem / 1.24 var(--display);
+  letter-spacing: -.045em;
+  overflow-wrap: anywhere;
+}
+
+.ward-panel > p, .ward-empty p, .ward-detail div > p { margin-top: 6px; color: var(--muted); line-height: 1.45; }
+.ward-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+.ward-panel label { display: grid; gap: 5px; min-width: 0; font-size: .82rem; font-weight: 700; }
+.ward-panel input:not([type='checkbox']), .ward-panel select, .ward-panel textarea {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: 7px 9px;
+  border: 1px solid #dadcd4;
+  border-radius: 7px;
+  background: #fcfcfa;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 550;
+}
+
+.ward-panel input:focus-visible, .ward-panel select:focus-visible, .ward-panel textarea:focus-visible {
+  outline: 2px solid #607249;
+  outline-offset: 1px;
+}
+
+.ward-panel fieldset { margin: 0; border: 0; padding: 0; min-width: 0; }
+.ward-panel textarea { resize: vertical; }
+.ward-photo {
+  position: relative;
+  display: grid;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f0f1eb, #e6ebdc);
+  color: #59654a;
+}
+
+.ward-photo--detail { border-radius: 10px; aspect-ratio: 4 / 3; align-self: start; }
+.ward-photo img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+.ward-photo--detail img { object-fit: contain; }
+.ward-photo-placeholder { display: grid; place-items: center; justify-content: center; align-content: center; gap: 7px; font-size: .79rem; }
+.ward-filters {
+  display: grid;
+  grid-template-columns: minmax(145px, 2fr) repeat(3, minmax(115px, 1fr));
+  gap: 10px;
+  padding: 13px;
+}
+
+.ward-search { display: block; position: relative; }
+.ward-search svg { position: absolute; inset: 11px auto auto 10px; color: var(--muted); }
+.ward-search input[type='search'] { padding-left: 34px; }
+.ward-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 185px), 1fr)); gap: 13px; }
+.ward-card {
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 13px;
+  text-align: left;
+  background: #fff;
+  color: var(--ink);
+  transition: border-color .15s, transform .15s;
+}
+
+.ward-card:hover { border-color: #aab690; transform: translateY(-2px); }
+.ward-card-caption { display: grid; gap: 4px; padding: 13px 14px 15px; overflow-wrap: anywhere; }
+.ward-card-caption small, .ward-meta dt { color: #4c5b35; font-size: .74rem; font-weight: 750; }
+.ward-card-caption strong { font: 800 1rem / 1.35 var(--display); }
+.ward-card-caption span { color: var(--muted); font-size: .81rem; }
+.ward-detail { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(13px, 3vw, 32px); }
+.garment-form { margin-top: 14px; }
+.ward-panel .ward-seasons { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.ward-seasons legend { margin: 0 0 4px; font-weight: 700; font-size: .82rem; }
+.ward-seasons label { display: flex; align-items: center; gap: 5px; }
+.ward-seasons input { accent-color: #455539; }
+.ward-meta { display: grid; gap: 7px; margin-top: 10px; }
+.ward-meta > div { display: grid; gap: 2px; }
+.ward-meta dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .86rem; }
+.ward-confirm { display: grid; gap: 8px; }
+.ward-confirm p { margin: 0; }
+.ward-secondary { background: #f4f5ed; color: #35412d; border-color: #e5e8d9; }
+.ward-secondary:hover { background: #e9eddd; }
+.ward-danger { color: #842d27; }
+.ward-delete { color: #fff; background: #832b24; }
+.ward-pagination { justify-content: flex-end; }
+.ward-link {
+  width: fit-content;
+  padding: 3px 0;
+  border: 0;
+  background: transparent;
+  color: #425835;
+  text-align: left;
+  font-size: .84rem;
+  font-weight: 780;
+}
+
+.ward-link:hover { text-decoration: underline; }
+.ward-stack .ward-error, .ward-panel .ward-error { color: #84332b; }
+.ward-hint { color: var(--muted); font-size: .8rem; }
+.ward-hint svg { margin-right: 5px; vertical-align: middle; }
+.ward-empty {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: clamp(20px, 4vw, 42px);
+  border: 1px solid #dfe5d2;
+  border-radius: 14px;
+  background: radial-gradient(ellipse at top right, #ecf2da 0, #f7f8f0 72%);
+}
+
+.ward-empty-icon { display: grid; flex: none; place-items: center; width: 62px; height: 62px; border-radius: 16px; background: #e5ebd5; color: #455839; }
+.ward-empty button, .vault-panel > .ward-actions, .vault-panel > .ward-link { margin-top: 13px; }
+.vault-panel { max-width: 720px; }
+.vault-panel > .icon-tile { margin-bottom: 10px; }
+.vault-panel form { margin-top: 13px; }
+.vault-panel fieldset { display: grid; gap: 11px; max-width: 430px; }
+.vault-panel fieldset > button, .vault-panel > button { justify-self: start; }
+
+@media (max-width: 920px) {
+  .ward-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 630px) {
+  .ward-detail { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 430px) {
+  .ward-empty { align-items: flex-start; flex-direction: column; }
+  .ward-fields { grid-template-columns: 1fr; }
+  .sidebar nav { flex-wrap: wrap; }
+}
